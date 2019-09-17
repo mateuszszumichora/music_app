@@ -1,6 +1,7 @@
 import React from 'react';
 import './AddMusic.scss';
 import { storage } from '../../../config/Firebase';
+import LoginPage from '../../../Pages/LoginPage/LoginPage';
 
 class AddMusic extends React.Component {
     state = {
@@ -20,6 +21,8 @@ class AddMusic extends React.Component {
     handleUpload = () => {
         const { mp3 } = this.state;
         const uploadTask = storage.ref(`mp3/${mp3.name}`).put(mp3);
+        if (mp3 === null) {
+        }
         uploadTask.on(
             'state_changed',
             snapshot => {
@@ -54,14 +57,27 @@ class AddMusic extends React.Component {
     };
     render() {
         return (
-            <div className="container">
-                <div className="buttons">
+            <div className="addMusicContainer">
+                <div className="buttonsAddMusic">
                     <input
-                        className="buttons input"
+                        id="choose"
                         onChange={this.handleChange}
                         type="file"
                     />
-                    <button onClick={this.handleUpload}>Upload</button>
+                    <label for="choose" className="input">
+                        {' '}
+                        Wybierz Plik
+                    </label>
+                    <br />
+                    {this.state.mp3 !== null ? (
+                        <button
+                            className="uploadButton"
+                            onClick={this.handleUpload}
+                        >
+                            Dodaj do Playlisty
+                        </button>
+                    ) : null}
+
                     <progress value={this.state.progress} max="100" />
                 </div>
             </div>

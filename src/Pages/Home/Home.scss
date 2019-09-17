@@ -1,0 +1,32 @@
+.mainWrapper {
+    width: 100vw;
+    height: calc(100vh -100px);
+    background-color: transparent;
+}
+
+.topWrapper {
+    width: 100vw;
+    height: calc(100vh - 100px);
+    display: flex;
+    background-color: transparent;
+}
+.playingbar {
+    width: 100%;
+    height: 100px;
+    background-color: #282828;
+    position: fixed;
+    bottom: 0;
+}
+
+.sidebar {
+    width: 20%;
+    order: 1;
+    height: 100%;
+    background: green;
+}
+.maincontent {
+    order: 2;
+    width: 80%;
+    height: 100%;
+    background-color: black;
+}

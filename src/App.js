@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import LoginPage from './Pages/LoginPage/LoginPage';
 import fire from './config/Firebase';
 import Home from './Pages/Home/Home';

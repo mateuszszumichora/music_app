@@ -7,6 +7,7 @@ import SearchIcon from '../../assets/icons/search.png';
 class Sidebar extends React.Component {
     logOut = e => {
         fire.auth().signOut();
+        console.log('klik');
     };
     render() {
         return (

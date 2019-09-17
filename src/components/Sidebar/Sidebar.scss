@@ -1,6 +1,5 @@
 .navbarWrapper {
     width: 200px;
-    height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,8 +13,11 @@
 }
 
 .navItem {
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
     .link {
+        width: 100%;
         text-decoration: none;
         color: #a8a8a8;
         &:hover {
@@ -23,7 +25,10 @@
         }
     }
 }
-
+.navbar {
+    display: flex;
+    justify-content: center;
+}
 .logout {
     background-color: white;
     border: 1px solid white;
@@ -35,4 +40,8 @@
     &:hover {
         border: 2px solid #a8a8a8;
     }
+}
+.downContent {
+    display: flex;
+    justify-content: center;
 }
