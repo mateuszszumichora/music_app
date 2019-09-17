@@ -1,0 +1,32 @@
+.rightContent {
+    min-width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+.controlButton {
+    background-color: transparent;
+    border: none;
+}
+.volumeBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+}
+.progressBar {
+    height: 8px;
+    display: inline-flex;
+    flex-grow: 3;
+    margin-right: 10px;
+    cursor: pointer;
+    &.background {
+        background-color: #404040;
+        border-radius: 4px;
+    }
+    .progress {
+        background-color: #a0a0a0;
+        width: 0;
+        border-radius: 4px;
+    }
+}

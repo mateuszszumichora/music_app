@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import fire from './config/Firebase';
+import Home from './Pages/Home/Home';
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {},
+        };
+        this.authListener = this.authListener.bind(this);
+    }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    componentDidMount() {
+        this.authListener();
+    }
+    authListener() {
+        fire.auth().onAuthStateChanged(user => {
+            console.log(user);
+            if (user) {
+                this.setState({ user });
+            } else {
+                this.setState({ user: null });
+            }
+        });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                {this.state.user ? <Home /> : <LoginPage />}
+            </div>
+        );
+    }
 }
 
 export default App;

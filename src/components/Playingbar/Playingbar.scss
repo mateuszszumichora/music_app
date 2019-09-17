@@ -1,0 +1,19 @@
+.nowPlayingBarContainer {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background-color: #282828;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.left {
+        flex-grow: 1;
+    }
+    &.center {
+        flex-grow: 2;
+    }
+    &.right {
+        flex-grow: 1;
+    }
+}

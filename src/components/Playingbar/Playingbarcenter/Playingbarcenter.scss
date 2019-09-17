@@ -1,0 +1,69 @@
+.content {
+    height: 100%;
+    width: 100%;
+    max-width: 620px;
+    &.upper,
+    &.down {
+        height: 50%;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+.buttons button {
+    background-color: transparent;
+    border: none;
+    vertical-align: center;
+}
+.pause {
+    display: none;
+}
+
+.controlButton {
+    cursor: pointer;
+    & img {
+        width: 20px;
+        height: 20px;
+        &.bigger {
+            width: 34px;
+            height: 34px;
+        }
+    }
+}
+.playbackbar {
+    font-size: 11px;
+    color: #a0a0a0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .now {
+        flex-grow: 1;
+        padding: 10px;
+    }
+    .remaining {
+        flex-grow: 1;
+        padding: 10px;
+    }
+
+    .progressBar {
+        width: 100%;
+        height: 8px;
+        display: inline-flex;
+        flex-grow: 3;
+        cursor: pointer;
+        &.background {
+            background-color: #404040;
+            border-radius: 4px;
+        }
+        .progress {
+            background-color: #a0a0a0;
+            width: 0;
+            border-radius: 4px;
+        }
+    }
+}
